@@ -6,18 +6,17 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - ./:/usr/src/pss
+      - ./:/usr/src/baza
     ports:
       - "8080:8080"
-
 
   nginx:
     build:
       context: ./docker/nginx
       dockerfile: Dockerfile
     ports:
-    - "80:80"
+    - "8800:8800"
     depends_on:
-      - web
+      - baza
 
 
