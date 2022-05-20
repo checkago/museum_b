@@ -8,7 +8,7 @@ services:
     volumes:
       - ./:/usr/src/baza
     ports:
-      - "8080:8080"
+      - "8880:8880"
 
   nginx:
     build:
