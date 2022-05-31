@@ -18,6 +18,7 @@ class Book(models.Model):
 class Simphony(models.Model):
     date = models.DateField(verbose_name='Дата симфонии')
     title = models.CharField(max_length=200, verbose_name='Название')
+    description = models.TextField(verbose_name='Описание', blank=True)
     image = models.ImageField(upload_to='books', blank=True, verbose_name='Изображение')
     file = models.FileField(upload_to='books_files', blank=True, verbose_name='Файл книги')
 
