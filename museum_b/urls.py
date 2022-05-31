@@ -8,6 +8,7 @@ from web import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('simphony/', views.simphony, name='simphony'),
 ]
 
 if settings.DEBUG:

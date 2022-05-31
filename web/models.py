@@ -9,7 +9,7 @@ class Book(models.Model):
 
     class Meta:
         verbose_name = 'Произведение'
-        verbose_name_plural = 'Проиведения'
+        verbose_name_plural = 'Произведения'
 
     def __str__(self):
         return self.title
@@ -22,8 +22,8 @@ class Simphony(models.Model):
     file = models.FileField(upload_to='books_files', blank=True, verbose_name='Файл книги')
 
     class Meta:
-        verbose_name = 'Произведение'
-        verbose_name_plural = 'Проиведения'
+        verbose_name = 'Симфония'
+        verbose_name_plural = 'Симфонии'
 
     def __str__(self):
         return self.title
