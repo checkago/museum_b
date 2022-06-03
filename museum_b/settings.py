@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'web',
     'ckeditor',
+    'ckeditor_uploader',
 ]
 
 SITE_ID = 1
