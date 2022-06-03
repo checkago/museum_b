@@ -26,6 +26,21 @@ class SimphonyAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
+class BookAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorUploadingWidget(config_name='default'))
+
+    class Meta:
+        verbose_name = 'Текст'
+        model = Book
+        fields = '__all__'
+
+
+class BookAdmin(admin.ModelAdmin):
+    form = BookAdminForm
+    list_display = ('title',)
+
+
+admin.site.register(Book, BookAdmin)
 admin.site.register(Simphony, SimphonyAdmin)
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)

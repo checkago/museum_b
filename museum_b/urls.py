@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('simphony/', views.simphony, name='simphony'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('books/', views.books, name='books'),
 ]
 
 if settings.DEBUG:
