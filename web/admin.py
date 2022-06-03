@@ -1,11 +1,19 @@
 from django.contrib import admin
 from web.models import *
 from django import forms
-from ckeditor.widgets import CKEditorWidget
+from django.contrib.flatpages.admin import FlatPageAdmin
+from django.contrib.flatpages.models import FlatPage
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+
+class FlatPageAdmin(FlatPageAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorUploadingWidget}
+    }
 
 
 class SimphonyAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorWidget(config_name='awesome_ckeditor'))
+    description = forms.CharField(widget=CKEditorUploadingWidget(config_name='default'))
 
     class Meta:
         verbose_name = 'Текст'
@@ -19,3 +27,5 @@ class SimphonyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Simphony, SimphonyAdmin)
+admin.site.unregister(FlatPage)
+admin.site.register(FlatPage, FlatPageAdmin)

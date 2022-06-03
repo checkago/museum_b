@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.flatpages.models import FlatPage
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Book(models.Model):
@@ -77,4 +79,6 @@ class Voice(models.Model):
 
     def __str__(self):
         return self.author
+
+
 

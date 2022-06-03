@@ -13,3 +13,6 @@ def simphony(request):
     return render(request, 'symphony.html', {'title': title, 'simfonii': simfonii})
 
 
+
+
+
