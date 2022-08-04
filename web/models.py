@@ -49,6 +49,7 @@ class Foto(models.Model):
 class Women(models.Model):
     name = models.CharField(max_length=250, verbose_name='Имя')
     image = models.ImageField(upload_to='womens', verbose_name='Музы')
+    description = models.TextField(verbose_name='Описание', blank=True)
 
     class Meta:
         verbose_name = 'Муза'

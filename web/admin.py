@@ -26,6 +26,20 @@ class SimphonyAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
+class WomenAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorUploadingWidget(config_name='default'))
+
+    class Meta:
+        verbose_name = 'Текст'
+        model = Women
+        fields = '__all__'
+
+
+class WomenAdmin(admin.ModelAdmin):
+    form = WomenAdminForm
+    list_display = ('name',)
+
+
 class BookAdminForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorUploadingWidget(config_name='default'))
 
@@ -42,5 +56,6 @@ class BookAdmin(admin.ModelAdmin):
 
 admin.site.register(Book, BookAdmin)
 admin.site.register(Simphony, SimphonyAdmin)
+admin.site.register(Women, WomenAdmin)
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
