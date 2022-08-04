@@ -18,6 +18,11 @@ def osipov(request):
     return render(request, 'osipov.html', {'title': title})
 
 
+def tropa(request):
+    title = 'Аудиогид "Тропой Андрея Белого"'
+    return render(request, 'tropa.html', {'title': title})
+
+
 def simphony(request):
     simfonii = Simphony.objects.all()
     title = 'Литературные симфонии Андрея Белого'

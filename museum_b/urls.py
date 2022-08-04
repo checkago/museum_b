@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('muzy', views.muzy, name='muzy'),
     path('osipov', views.osipov, name='osipov'),
+    path('tropa', views.tropa, name='tropa'),
     path('simphony/', views.simphony, name='simphony'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('books/', views.books, name='books'),
