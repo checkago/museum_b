@@ -77,7 +77,7 @@ class Voice(models.Model):
 
     class Meta:
         verbose_name = 'Запись'
-        verbose_name_plural = 'Записи'
+        verbose_name_plural = 'Голоса СВ'
 
     def __str__(self):
         return self.author

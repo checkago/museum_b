@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from web.models import Simphony, Book, Women
+from web.models import Simphony, Book, Women, Voice, Foto
 
 
 def index(request):
@@ -13,6 +13,12 @@ def muzy(request):
     return render(request, 'muzy.html', {'title': title, 'womens': womens})
 
 
+def voices(request):
+    title = 'Голоса серебрянного века'
+    voices = Voice.objects.all()
+    return render(request, 'golosa.html', {'title': title, 'voices': voices})
+
+
 def osipov(request):
     title = 'Фильм Андрея Оиспова'
     return render(request, 'osipov.html', {'title': title})
@@ -21,6 +27,12 @@ def osipov(request):
 def tropa(request):
     title = 'Аудиогид "Тропой Андрея Белого"'
     return render(request, 'tropa.html', {'title': title})
+
+
+def foto(request):
+    title = 'Фотогаллерея'
+    fotos = Foto.objects.all()
+    return render(request, 'foto.html', {'title': title, 'fotos': fotos})
 
 
 def simphony(request):
